@@ -1,6 +1,18 @@
 import "./App.css";
 
 export default function App() {
+  const exercises = [
+    {
+      name: "testexercise",
+      sets: [
+        {
+          reps: 5,
+          weight: 200,
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="max-w-lg max-h-lg min-h-screen mx-auto bg-white rounded-md shadow-lg">
       <div className="max-w-lg mx-auto bg-indigo-800 p-2">
@@ -29,10 +41,50 @@ export default function App() {
       ></div>
       <div className="min-h-300 p-4">
         <p className="text-indigo-300 font-medium text-md mb-2">Exercises:</p>
-        <div className="flex min-w-64 gap-4 justify-center flex-wrap border- md:flex-nowrap">
+        <div className="flex min-w-64 gap-4 justify-center flex-wrap mb-4 md:flex-nowrap">
           <h1 className="font-medium text-lg grow w-full text-center md:w-fit md:text-start">
             Bench Press
           </h1>
+          <div className="flex flex-col items-center">
+            <p className="font-bold">Set 1</p>
+            <div className="flex gap-1 text-sm">
+              <p>10</p>
+              <span>x</span>
+              <p>225lbs</p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center">
+            <p className="font-bold">Set 2</p>
+            <div className="flex gap-1 text-sm">
+              <p>10</p>
+              <span>x</span>
+              <p>225lbs</p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center">
+            <p className="font-bold">Set 3</p>
+            <div className="flex gap-1 text-sm">
+              <p>10</p>
+              <span>x</span>
+              <p>225lbs</p>
+            </div>
+          </div>
+        </div>
+        <div className="flex min-w-64 gap-4 justify-center flex-wrap mb-4 md:flex-nowrap">
+          {exercises.map((exercise) => (
+            <>
+              <h1 className="font-medium text-lg grow w-full text-center md:w-fit md:text-start">
+                {exercise.name}
+              </h1>
+              {exercise.sets.map((set) => (
+                <>
+                  <p>
+                    {set.reps} reps x {set.weight}lbs
+                  </p>
+                </>
+              ))}
+            </>
+          ))}
           <div className="flex flex-col items-center">
             <p className="font-bold">Set 1</p>
             <div className="flex gap-1 text-sm">
