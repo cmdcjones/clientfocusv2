@@ -1,10 +1,9 @@
 import "./App.css";
-import { Workout } from "./pages/Workout";
 
 export default function App() {
   return (
     <>
-      <Workout />;
+      <p className="text-3xl font-bold underline">Hello world</p>
     </>
   );
 }
