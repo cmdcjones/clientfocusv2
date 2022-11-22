@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .divider {
+    @apply max-w-64 border-b-neutral-300 border-b-2 mx-auto mt-2  rounded-md md:max-w-96;
+  }
+}

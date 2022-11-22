@@ -31,10 +31,7 @@ export default function App() {
           Today's Workout
         </p>
       </div>
-      <div
-        id="divider"
-        className="max-w-64 border-b-neutral-300 border-b-2 mx-auto mt-2  rounded-md md:max-w-96"
-      ></div>
+      <div className="divider"></div>
       <div className="min-h-300 p-4">
         <p className="text-indigo-300 font-medium text-md mb-2">Warm-up:</p>
         <p className="text-zinc-600 font-medium text-md">
@@ -43,10 +40,7 @@ export default function App() {
           sed obcaecati sapiente hic a corrupti iure eaque doloribus sunt sequi.
         </p>
       </div>
-      <div
-        id="divider"
-        className="max-w-64 border-b-neutral-300 border-b-2 mx-auto mt-2  rounded-md md:max-w-96"
-      ></div>
+      <div className="divider"></div>
       <div className="min-h-300 p-4">
         <p className="text-indigo-300 font-medium text-md mb-2">Exercises:</p>
         <div className="flex min-w-64 gap-4 justify-center flex-wrap mb-4 md:flex-nowrap md:justify-start">
