@@ -3,8 +3,16 @@ import "./App.css";
 export default function App() {
   const exercises = [
     {
-      name: "testexercise",
+      name: "Barbell Romanian Deadlift",
       sets: [
+        {
+          reps: 5,
+          weight: 200,
+        },
+        {
+          reps: 5,
+          weight: 200,
+        },
         {
           reps: 5,
           weight: 200,
@@ -14,18 +22,18 @@ export default function App() {
   ];
 
   return (
-    <div className="max-w-lg max-h-lg min-h-screen mx-auto bg-white rounded-md shadow-lg">
-      <div className="max-w-lg mx-auto bg-indigo-800 p-2">
+    <div className="max-w-sm max-h-lg min-h-screen mx-auto bg-white rounded-md shadow-lg md:max-w-xl">
+      <div className="max-w-sm mx-auto bg-indigo-800 p-2 rounded-t-md md:max-w-xl">
         <p className="text-md font-medium text-white">Date: 12/12/2022</p>
       </div>
       <div className="min-h-10 p-2">
-        <p className="text-black font-medium text-xl text-center">
+        <p className="text-black font-medium text-xl text-center mt-2">
           Today's Workout
         </p>
       </div>
       <div
         id="divider"
-        className="max-w-64 border-b-neutral-300 border-b-2 mx-auto mt-2  rounded-md"
+        className="max-w-64 border-b-neutral-300 border-b-2 mx-auto mt-2  rounded-md md:max-w-96"
       ></div>
       <div className="min-h-300 p-4">
         <p className="text-indigo-300 font-medium text-md mb-2">Warm-up:</p>
@@ -37,78 +45,30 @@ export default function App() {
       </div>
       <div
         id="divider"
-        className="max-w-64 border-b-neutral-300 border-b-2 mx-auto mt-2  rounded-md"
+        className="max-w-64 border-b-neutral-300 border-b-2 mx-auto mt-2  rounded-md md:max-w-96"
       ></div>
       <div className="min-h-300 p-4">
         <p className="text-indigo-300 font-medium text-md mb-2">Exercises:</p>
-        <div className="flex min-w-64 gap-4 justify-center flex-wrap mb-4 md:flex-nowrap">
-          <h1 className="font-medium text-lg grow w-full text-center md:w-fit md:text-start">
-            Bench Press
-          </h1>
-          <div className="flex flex-col items-center">
-            <p className="font-bold">Set 1</p>
-            <div className="flex gap-1 text-sm">
-              <p>10</p>
-              <span>x</span>
-              <p>225lbs</p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center">
-            <p className="font-bold">Set 2</p>
-            <div className="flex gap-1 text-sm">
-              <p>10</p>
-              <span>x</span>
-              <p>225lbs</p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center">
-            <p className="font-bold">Set 3</p>
-            <div className="flex gap-1 text-sm">
-              <p>10</p>
-              <span>x</span>
-              <p>225lbs</p>
-            </div>
-          </div>
-        </div>
-        <div className="flex min-w-64 gap-4 justify-center flex-wrap mb-4 md:flex-nowrap">
+        <div className="flex min-w-64 gap-4 justify-center flex-wrap mb-4 md:flex-nowrap md:justify-start">
           {exercises.map((exercise) => (
             <>
-              <h1 className="font-medium text-lg grow w-full text-center md:w-fit md:text-start">
+              <h1 className="font-medium text-lg grow w-full text-center md:max-w-48 md:text-start">
                 {exercise.name}
               </h1>
-              {exercise.sets.map((set) => (
-                <>
-                  <p>
-                    {set.reps} reps x {set.weight}lbs
-                  </p>
-                </>
-              ))}
+              <div className="flex flex-col items-center gap-2 md:flex-row md:gap-4">
+                {exercise.sets.map((set, setNumber) => (
+                  <div className="flex flex-col items-center">
+                    <p className="font-bold">Set {setNumber + 1}</p>
+                    <div>
+                      <p className="text-sm">
+                        {set.reps} reps x {set.weight}lbs
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </>
           ))}
-          <div className="flex flex-col items-center">
-            <p className="font-bold">Set 1</p>
-            <div className="flex gap-1 text-sm">
-              <p>10</p>
-              <span>x</span>
-              <p>225lbs</p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center">
-            <p className="font-bold">Set 2</p>
-            <div className="flex gap-1 text-sm">
-              <p>10</p>
-              <span>x</span>
-              <p>225lbs</p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center">
-            <p className="font-bold">Set 3</p>
-            <div className="flex gap-1 text-sm">
-              <p>10</p>
-              <span>x</span>
-              <p>225lbs</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
