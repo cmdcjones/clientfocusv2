@@ -19,6 +19,23 @@ export default function App() {
         },
       ],
     },
+    {
+      name: "Barbell Bench Press",
+      sets: [
+        {
+          reps: 1,
+          weight: 900,
+        },
+        {
+          reps: 5,
+          weight: 200,
+        },
+        {
+          reps: 5,
+          weight: 200,
+        },
+      ],
+    },
   ];
 
   return (
@@ -43,14 +60,14 @@ export default function App() {
       <div className="divider"></div>
       <div className="min-h-300 p-4">
         <p className="text-indigo-300 font-medium text-md mb-2">Exercises:</p>
-        <div className="flex min-w-64 gap-4 justify-center flex-wrap mb-4 md:flex-nowrap md:justify-start">
-          {/* TODO: add keys */}
+        <div className="flex min-w-64 gap-4 justify-center flex-wrap mb-4 md:justify-start">
+          {/* TODO: add keys to createWorkout!*/}
           {exercises.map((exercise) => (
-            <>
-              <h1 className="font-medium text-lg grow w-full text-center md:max-w-48 md:text-start">
+            <div className="md:w-full md:flex  md:place-content-between">
+              <h1 className="font-medium text-lg text-center md:max-w-48 md:text-start">
                 {exercise.name}
               </h1>
-              <div className="flex flex-col items-center gap-2 md:flex-row md:gap-4">
+              <div className="flex flex-col items-center gap-2 md:flex-row md:gap-4 md:flex-end">
                 {exercise.sets.map((set, setNumber) => (
                   <div className="flex flex-col items-center">
                     <p className="font-bold">Set {setNumber + 1}</p>
@@ -62,9 +79,18 @@ export default function App() {
                   </div>
                 ))}
               </div>
-            </>
+            </div>
           ))}
         </div>
+      </div>
+      <div className="divider"></div>
+      <div className="min-h-300 p-4">
+        <p className="text-indigo-300 font-medium text-md mb-2">Cool down:</p>
+        <p className="text-zinc-600 font-medium text-md">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo impedit
+          maxime omnis minima architecto fuga atque, iusto quidem repudiandae
+          sed obcaecati sapiente hic a corrupti iure eaque doloribus sunt sequi.
+        </p>
       </div>
     </div>
   );
