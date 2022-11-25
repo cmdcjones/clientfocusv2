@@ -27,12 +27,29 @@ export default function App() {
           weight: 900,
         },
         {
-          reps: 5,
-          weight: 200,
+          reps: 10,
+          weight: 300,
         },
         {
-          reps: 5,
-          weight: 200,
+          reps: 20,
+          weight: 100,
+        },
+      ],
+    },
+    {
+      name: "Dumbbell Squat",
+      sets: [
+        {
+          reps: 12,
+          weight: 80,
+        },
+        {
+          reps: 15,
+          weight: 15,
+        },
+        {
+          reps: 50,
+          weight: 10,
         },
       ],
     },
@@ -63,29 +80,39 @@ export default function App() {
         <div className="flex min-w-64 gap-4 justify-center flex-wrap mb-4 md:justify-start">
           {/* TODO: add keys to createWorkout!*/}
           {exercises.map((exercise) => (
-            <div className="md:w-full md:flex  md:place-content-between">
-              <h1 className="font-medium text-lg text-center md:max-w-48 md:text-start">
+            <div className="w-full md:flex  md:place-content-between">
+              <h1 className="font-medium text-lg text-center md:max-w-36 md:text-start">
                 {exercise.name}
               </h1>
-              <div className="flex flex-col items-center gap-2 md:flex-row md:gap-4 md:flex-end">
+              <div className="flex flex-col items-center gap-2 md:flex-row md:gap-4 md:flex-end md:min-w-[325px]">
                 {exercise.sets.map((set, setNumber) => (
                   <div className="flex flex-col items-center">
                     <p className="font-bold">Set {setNumber + 1}</p>
                     <div>
                       <p className="text-sm">
-                        {set.reps} reps x {set.weight}lbs
+                        {set.reps} reps | {set.weight}lbs
                       </p>
                     </div>
                   </div>
                 ))}
               </div>
+              <div className="divider mt-4 md:hidden"></div>
             </div>
           ))}
         </div>
       </div>
-      <div className="divider"></div>
+      <div className="md:divider"></div>
       <div className="min-h-300 p-4">
         <p className="text-indigo-300 font-medium text-md mb-2">Cool down:</p>
+        <p className="text-zinc-600 font-medium text-md">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo impedit
+          maxime omnis minima architecto fuga atque, iusto quidem repudiandae
+          sed obcaecati sapiente hic a corrupti iure eaque doloribus sunt sequi.
+        </p>
+      </div>
+      <div className="divider"></div>
+      <div className="min-h-300 p-4">
+        <p className="text-indigo-300 font-medium text-md mb-2">Comments:</p>
         <p className="text-zinc-600 font-medium text-md">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo impedit
           maxime omnis minima architecto fuga atque, iusto quidem repudiandae
