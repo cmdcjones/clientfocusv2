@@ -1,4 +1,5 @@
 import "./App.css";
+import { WorkoutTitle } from "./components/WorkoutTitle";
 
 export default function App() {
   const exercises = [
@@ -19,40 +20,6 @@ export default function App() {
         },
       ],
     },
-    {
-      name: "Barbell Bench Press",
-      sets: [
-        {
-          reps: 1,
-          weight: 900,
-        },
-        {
-          reps: 10,
-          weight: 300,
-        },
-        {
-          reps: 20,
-          weight: 100,
-        },
-      ],
-    },
-    {
-      name: "Dumbbell Squat",
-      sets: [
-        {
-          reps: 12,
-          weight: 80,
-        },
-        {
-          reps: 15,
-          weight: 15,
-        },
-        {
-          reps: 50,
-          weight: 10,
-        },
-      ],
-    },
   ];
 
   return (
@@ -60,11 +27,7 @@ export default function App() {
       <div className="max-w-sm mx-auto bg-indigo-800 p-2 rounded-t-md md:max-w-xl">
         <p className="text-md font-medium text-white">Date: 12/12/2022</p>
       </div>
-      <div className="min-h-10 p-2">
-        <p className="text-black font-medium text-xl text-center mt-2">
-          Today's Workout
-        </p>
-      </div>
+      <WorkoutTitle />
       <div className="divider"></div>
       <div className="min-h-300 p-4">
         <p className="text-indigo-300 font-medium text-md mb-2">Warm-up:</p>
